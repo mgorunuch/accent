@@ -10,14 +10,12 @@ services:
       - postgresql
     environment:
       - PORT=4000
-      - DATABASE_URL=postgres://postgres@localhost:5432/accent_development
+      - DATABASE_URL=postgres://postgres@localhost:5432/accent
   postgresql:
     image: postgres:15.6
     container_name: accent-postgres
     environment:
-      - POSTGRES_DB=accent_development
-    ports:
-      - 5432:5432
+      - POSTGRES_DB=accent
     volumes:
       - accent_psql:/var/lib/postgresql/data
 volumes:
