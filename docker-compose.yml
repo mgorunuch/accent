@@ -1,8 +1,6 @@
 version: '3.7'
 services:
   application:
-    container_name: accent
-    network_mode: "host"
     build: .
     depends_on:
       - postgresql
@@ -11,7 +9,6 @@ services:
       - DATABASE_URL=postgres://postgres@postgresql:5432/accent
   postgresql:
     image: postgres:15.6
-    container_name: accent-postgres
     environment:
       - POSTGRES_DB=accent
       - POSTGRES_HOST_AUTH_METHOD=trust
