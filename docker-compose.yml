@@ -5,8 +5,11 @@ services:
     depends_on:
       - postgresql
     environment:
-      - PORT=4000
+      - PORT=80
       - DATABASE_URL=postgres://postgres@postgresql:5432/accent
+      - SECRET_KEY_BASE=d6533d618c5908706c482741291525e408aadf159c863d6647e08b5bf4f03b9e23968cd5ca44c6d6e683c4d50f4623af612c1ac91c1da58ea9cb9358c2c821a8
+      - RESTRICTED_PROJECT_CREATOR_EMAIL_DOMAIN=the-ihor.com
+      - CANONICAL_URL=https://accent.the-ihor.com
   postgresql:
     image: postgres:15.6
     environment:
