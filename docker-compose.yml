@@ -16,6 +16,7 @@ services:
     container_name: accent-postgres
     environment:
       - POSTGRES_DB=accent
+      - POSTGRES_HOST_AUTH_METHOD=trust
     volumes:
       - accent_psql:/var/lib/postgresql/data
 volumes:
